@@ -27,7 +27,7 @@ jobs: #this section contains the tasks / jobs that must be executed
                         - run: git clone https://github.com/smogon/pokemon-showdown.git
                         - run: npm ci  
                         - name: "Fetch latest formats.js" 
-                          run: mkdir temp && cd pokemon-showdown && npm i && node build && cp .config-dist/formats.js ../temp/formats.js && rm -rf pokemon-showdown
+                          run: mkdir temp && cd pokemon-showdown && npm i && node build && cp .config-dist/formats.js ../temp/formats.js
                         - name: "Extract latest data"
                           run: npm start
                         - name: Commit differences # commit if differences are tracked after updates (previous step)
