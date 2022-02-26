@@ -25,9 +25,7 @@ jobs: #this section contains the tasks / jobs that must be executed
                           with:
                             node-version: '12'
                         - run: git clone https://github.com/smogon/pokemon-showdown.git    
-                        - run: cd pokemon-showdown && npm i && node build
-                        - run: cp pokemon-showdown/.config-dist/formats.js ./temp/formats.js
-
+                        - run: cd pokemon-showdown && npm i && node build && .config-dist/formats.js ../temp/formats.js
                         - name: "Extract latest data"
                           run: npm start
                         - name: Commit differences # commit if differences are tracked after updates (previous step)
