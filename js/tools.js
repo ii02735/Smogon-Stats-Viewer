@@ -425,16 +425,16 @@ window.Tools = {
 
 		var top = Math.floor(num / 16) * 24;
 		var left = (num % 16) * 24;
-		return 'background:transparent url(./resources/itemicons-sheet.png?2018dec) no-repeat scroll -' + left + 'px -' + top + 'px';
+		return 'background:transparent url(./resources/itemicons-sheet.png) no-repeat scroll -' + left + 'px -' + top + 'px';
 	},
 	getItemSprite: function(item) {
 		return '<div class="item-icon" style="' + this.getItemIcon(item) + '"></div>';
 	},
 	getTypeSprite: function (name) {
 		if (name == "???") {
-			return '<img class="type-image" title="' + name + '" src="' + 'https://play.pokemonshowdown.com/sprites/types/%3f%3f%3f.png' + '" />';
+			return '<img class="type-image" title="' + name + '" width="32px" height="14px" src="' + 'https://play.pokemonshowdown.com/sprites/types/%3f%3f%3f.png' + '" />';
 		} else {
-			return '<img class="type-image" title="' + name + '" src="' + 'https://play.pokemonshowdown.com/sprites/types/' + name + '.png' + '" />';
+			return '<img class="type-image" title="' + name + '" width="32px" height="14px" src="' + 'https://play.pokemonshowdown.com/sprites/types/' + name + '.png' + '" />';
 		}
 	},
 	getMoveTypeSprite: function (name) {
@@ -447,9 +447,9 @@ window.Tools = {
 	},
 	getCategorySprite: function (name) {
 		if (name == "???") {
-			return '<img class="category-image" title="' + name + '" src="' + 'https://play.pokemonshowdown.com/sprites/categories/undefined.png' + '" />';
+			return '<img class="category-image" title="' + name + '" width="32px" height="14px" src="' + 'https://play.pokemonshowdown.com/sprites/categories/undefined.png' + '" />';
 		} else {
-			return '<img class="category-image" title="' + name + '" src="' + 'https://play.pokemonshowdown.com/sprites/categories/' + name + '.png' + '" />';
+			return '<img class="category-image" title="' + name + '" width="32px" height="14px" src="' + 'https://play.pokemonshowdown.com/sprites/categories/' + name + '.png' + '" />';
 		}
 	},
 	getMoveCategorySprite: function (name) {

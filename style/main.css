@@ -262,13 +262,19 @@
 .type-image {
 	display: inline-block;
 	margin-left: 1.2rem;
+<<<<<<< HEAD
 	height: 1rem;
 	width: auto;
+=======
+>>>>>>> master
 }
 
 .category-image {
 	display: inline-block;
 	margin-left: 0.3rem;
+<<<<<<< HEAD
 	height: 1rem;
 	width: auto;
+=======
+>>>>>>> master
 }

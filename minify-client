@@ -68,7 +68,11 @@ let movedex = require(Movedex_File).BattleMovedex;
 let newMovedex = {};
 
 for (let move in movedex) {
+<<<<<<< HEAD
 	newMovedex[move] = {num: movedex[move].num, type: movedex[move].type, category: movedex[move].category};
+=======
+	newMovedex[move] = {num: movedex[move].num, type: movedex[move].type};
+>>>>>>> master
 }
 
 FileSystem.writeFileSync(Movedex_File_Min, "window.BattleMovedex = " + JSON.stringify(newMovedex) + ";");

@@ -153,6 +153,7 @@
     "gen7dualwielding": "[Gen 7] Dual Wielding",
     "gen7camomons": "[Gen 7] Camomons",
     "gen7challengecup2v2": "[Gen 7] Challenge Cup 2v2",
+<<<<<<< HEAD
     "gen5pu": "[Gen 5] PU",
     "gen7nususpecttest": "[Gen 7] NU (suspect test)",
     "gen7battlespotspecial7": "[Gen 7] Battle Spot Special 7",
@@ -220,4 +221,7 @@
     "gen5monotype": "[Gen 5] Monotype",
     "gen4anythinggoes": "[Gen 4] Anything Goes",
     "gen1stadiumou": "[Gen 1] Stadium OU"
+=======
+    "gen5pu": "[Gen 5] PU"
+>>>>>>> master
 }
