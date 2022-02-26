@@ -20,7 +20,7 @@ jobs: #this section contains the tasks / jobs that must be executed
                           with:
                              ref: ${{ github.read_ref }}
                              
-                        - name: "Fetch latest formats.js file"
+                        - name: "Fetch latest formats.js"
                           uses: actions/setup-node@v2
                           with:
                             node-version: '12'
@@ -29,7 +29,7 @@ jobs: #this section contains the tasks / jobs that must be executed
                         - run: cp .config-dist/formats.js ../temp/formats.js
 
                         - name: "Extract latest data"
-                        - run: npm start
+                          run: npm start
                         - name: Commit differences # commit if differences are tracked after updates (previous step)
                           uses: stefanzweifel/git-auto-commit-action@v4
                           with:
