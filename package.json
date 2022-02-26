@@ -18,8 +18,9 @@
   },
   "dependencies": {
     "commander": "2.10.0",
-	"node-static": "0.7.9",
-	"rimraf": "2.6.1"
+    "mime": "^1.6.0",
+    "node-static": "0.7.9",
+    "rimraf": "2.6.1"
   },
   "description": "Smogon usage stats viewer",
   "homepage": "https://github.com/asanrom/Smogon-Stats-Viewer",
@@ -31,6 +32,6 @@
   "license": "MIT",
   "devDependencies": {
     "eslint": "4.1.1",
-	"node-minify": "2.0.4"
+    "node-minify": "2.0.4"
   }
 }
