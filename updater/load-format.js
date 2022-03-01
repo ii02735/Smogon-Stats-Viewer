@@ -63,6 +63,7 @@ class FormatLoader {
 			}
 			console.log("Downloading format: " + this.format + " / cutline: " + this.cuts[this.curr]);
 			this.loadCutline(this.cuts[this.curr], function (ranks, leads, moveset, err) {
+		
 				if (ranks) {
 					ranks = Parser.parsePokemonRanking(ranks);
 					FileSystem.writeFileSync(Path.resolve(this.path, "" + this.cuts[this.curr], "ranking.json"), JSON.stringify(ranks));
@@ -84,7 +85,7 @@ class FormatLoader {
 
 				let pokeData = {};
 
-				Parser.parsePokemonUsageData(moveset, leads, pokemon => {
+				Parser.parsePokemonUsageData(moveset, ranks, leads, pokemon => {
 					let poke = pokemon.id;
 					delete pokemon.id;
 					pokeData[poke] = pokemon;

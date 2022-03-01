@@ -144,12 +144,14 @@ exports.parsePokemonLeadsInfo = function (str) {
 	return leads;
 };
 
-exports.parsePokemonUsageData = function (str, leadsInfo, done) {
+exports.parsePokemonUsageData = function (str, ranking, leadsInfo, done) {
 	let pokes = str.split(" +----------------------------------------+ \n +----------------------------------------+ \n");
-
+	const { pokemon: pokemonRank } = ranking;
+	let index = 0;
 	for (let pokeStr of pokes) {
 		let pokemon = {
 			id: "",
+			usage: pokemonRank[index].usage,
 			raw: 0,
 			avg: 0,
 			vc: 0,
@@ -283,6 +285,7 @@ exports.parsePokemonUsageData = function (str, leadsInfo, done) {
 		}
 
 		done(pokemon);
+		index++;
 	}
 };
 
