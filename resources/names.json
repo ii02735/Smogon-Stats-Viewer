@@ -208,5 +208,12 @@
     "gen4vgc2010": "[Gen 4] VGC 2010",
     "gen4vgc2009": "[Gen 4] VGC 2009",
     "gen3doublesou": "[Gen 3] Doubles OU",
-    "gen21v1": "[Gen 2] 1v1"
+    "gen21v1": "[Gen 2] 1v1",
+    "gen8restrictions": "[Gen 8] Restrictions",
+    "gen8roulettemonsrandombattle": "[Gen 8] Roulettemons Random Battle",
+    "gen8sketchmons": "[Gen 8] Sketchmons",
+    "gen8flipped": "[Gen 8] Flipped",
+    "gen8bdsppu": "[Gen 8 BDSP] PU",
+    "gen6zu": "[Gen 6] ZU",
+    "gen4zu": "[Gen 4] ZU"
 }
