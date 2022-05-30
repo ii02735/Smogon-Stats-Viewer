@@ -8,6 +8,9 @@ const Program = require('commander');
 
 const Package = require(Path.resolve(__dirname, 'package.json'));
 
+if(!FileSystem.existsSync('temp'))
+	FileSystem.mkdirSync('temp')
+FileSystem.copyFileSync("node_modules/pokemon-showdown/.config-dist/formats.js",'temp/formats.js')
 /* Globals */
 
 global.toId = function (str) {
