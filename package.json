@@ -18,6 +18,7 @@
   },
   "dependencies": {
     "commander": "2.10.0",
+    "fs-extra": "^10.1.0",
     "mime": "^1.6.0",
     "node-static": "0.7.9",
     "rimraf": "2.6.1"
