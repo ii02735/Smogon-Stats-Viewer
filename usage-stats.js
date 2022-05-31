@@ -8,12 +8,10 @@ const Program = require('commander');
 
 const Package = require(Path.resolve(__dirname, 'package.json'));
 
+if(process.env.USAGE_PATH && !FileSystem.existsSync(process.env.USAGE_PATH))
+	FileSystem.mkdirSync(process.env.USAGE_PATH)
 if(!FileSystem.existsSync('temp'))
 	FileSystem.mkdirSync('temp')
-if(FileSystem.existsSync("../pokemon-showdown/.config-dist/formats.js"))
-	FileSystem.copyFileSync("../pokemon-showdown/.config-dist/formats.js",'temp/formats.js')	
-else if(FileSystem.existsSync("node_modules/pokemon-showdown/.config-dist/formats.js"))
-	FileSystem.copyFileSync("node_modules/pokemon-showdown/.config-dist/formats.js",'temp/formats.js')	
 /* Globals */
 
 global.toId = function (str) {
@@ -24,6 +22,7 @@ global.toId = function (str) {
 global.mkdir = function (path) {
 	if (!FileSystem.existsSync(path)) {
 		try {
+			console.log(path)
 			FileSystem.mkdirSync(path);
 		} catch (err) {
 			throw err;

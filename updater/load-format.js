@@ -31,14 +31,14 @@ function wget(url, callback) {
 }
 
 class FormatLoader {
-	constructor(month, id, format, callback) {
+	constructor(month, id, format, callback, path) {
 		this.month = month;
 		this.format = id;
 		this.cuts = format.cuts;
 		this.length = this.cuts.length;
 		this.callback = callback;
 
-		this.path = Path.resolve(__dirname, "../data/months/" + this.month + "/formats/" + this.format + "/");
+		this.path = Path.resolve(...path, "months", this.month, "formats", this.format);
 		mkdir(this.path);
 
 		this.curr = -1;
@@ -131,6 +131,7 @@ class FormatsLoader {
 		this.keys = Object.keys(formats);
 		this.length = this.keys.length;
 		this.callback = callback;
+		this.path = process.env.USAGE_PATH ? [process.env.USAGE_PATH] : [__dirname, '../data'];
 
 		this.curr = -1;
 		this.currFormat = null;
@@ -147,7 +148,7 @@ class FormatsLoader {
 			let format = this.keys[this.curr];
 			this.currFormat = new FormatLoader(this.month, format, this.formats[format], function () {
 				this.next();
-			}.bind(this));
+			}.bind(this),this.path);
 			this.currFormat.start();
 		} else {
 			this.end();
