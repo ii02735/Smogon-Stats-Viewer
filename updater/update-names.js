@@ -4,9 +4,6 @@
 
 const Path = require('path');
 const FileSystem = require('fs');
-const Https = require('https');
-
-//const Showdown_Formats_URL = "https://raw.githubusercontent.com/Zarel/Pokemon-Showdown/master/config/formats.js";
 
 const Names_File = Path.resolve(__dirname, "../resources/names.json");
 const Names_File_Min = Path.resolve(__dirname, "../resources/names-min.js");
@@ -37,20 +34,6 @@ function updateNames(formatsData) {
 
 exports.start = function () {
 	console.log("Getting formats data...");
-	mkdir(Path.resolve(__dirname, "../temp/"));
-	// Https.get(Showdown_Formats_URL, res => {
-	// 	let data = '';
-	// 	res.on('data', chunk => {
-	// 		data += chunk;
-	// 	});
-	// 	res.on('end', () => {
-	// 		console.log("GET: " + Showdown_Formats_URL);
-	// 		FileSystem.writeFileSync(Path.resolve(__dirname, "../temp/formats.js"), data);
-	// 		setTimeout(() => {
-	updateNames(require(Path.resolve(__dirname, "../temp/formats.js")).Formats);
-	// 		}, 500);
-	// 	});
-	// }).on('error', e => {
-	// 	console.error(e);
-	// });
+	const { Dex } = require('pokemon-showdown')
+	updateNames(Dex.formats.all());
 };
