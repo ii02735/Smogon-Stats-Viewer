@@ -8,10 +8,8 @@ const Program = require('commander');
 
 const Package = require(Path.resolve(__dirname, 'package.json'));
 
-if(process.env.USAGE_PATH && !FileSystem.existsSync(process.env.USAGE_PATH))
-	FileSystem.mkdirSync(process.env.USAGE_PATH)
-if(!FileSystem.existsSync('temp'))
-	FileSystem.mkdirSync('temp')
+if (process.env.USAGE_PATH && !FileSystem.existsSync(process.env.USAGE_PATH)) {FileSystem.mkdirSync(process.env.USAGE_PATH);}
+if (!FileSystem.existsSync('temp')) {FileSystem.mkdirSync('temp');}
 /* Globals */
 
 global.toId = function (str) {
@@ -22,7 +20,7 @@ global.toId = function (str) {
 global.mkdir = function (path) {
 	if (!FileSystem.existsSync(path)) {
 		try {
-			console.log(path)
+			console.log(path);
 			FileSystem.mkdirSync(path);
 		} catch (err) {
 			throw err;

@@ -63,7 +63,6 @@ class FormatLoader {
 			}
 			console.log("Downloading format: " + this.format + " / cutline: " + this.cuts[this.curr]);
 			this.loadCutline(this.cuts[this.curr], function (ranks, leads, moveset, err) {
-		
 				if (ranks) {
 					ranks = Parser.parsePokemonRanking(ranks);
 					FileSystem.writeFileSync(Path.resolve(this.path, "" + this.cuts[this.curr], "ranking.json"), JSON.stringify(ranks));
@@ -148,7 +147,7 @@ class FormatsLoader {
 			let format = this.keys[this.curr];
 			this.currFormat = new FormatLoader(this.month, format, this.formats[format], function () {
 				this.next();
-			}.bind(this),this.path);
+			}.bind(this), this.path);
 			this.currFormat.start();
 		} else {
 			this.end();

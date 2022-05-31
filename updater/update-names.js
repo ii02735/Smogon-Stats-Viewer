@@ -34,6 +34,6 @@ function updateNames(formatsData) {
 
 exports.start = function () {
 	console.log("Getting formats data...");
-	const { Dex } = require('pokemon-showdown')
+	const { Dex } = require(Path.join(__dirname,'..','pokemon-showdown','.sim-dist','dex.js'));
 	updateNames(Dex.formats.all());
 };

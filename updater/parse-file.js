@@ -146,7 +146,7 @@ exports.parsePokemonLeadsInfo = function (str) {
 
 exports.parsePokemonUsageData = function (str, ranking, leadsInfo, done) {
 	let pokes = str.split(" +----------------------------------------+ \n +----------------------------------------+ \n");
-	const { pokemon: pokemonRank } = ranking;
+	const {pokemon: pokemonRank} = ranking;
 	let index = 0;
 	for (let pokeStr of pokes) {
 		let pokemon = {

@@ -1,6 +1,6 @@
 {
   "name": "smogon-stats-viewer",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "author": {
     "name": "ii02735",
     "email": "yadallee.bilaal@outlook.fr",
@@ -9,7 +9,8 @@
   "scripts": {
     "build": "eslint --fix --cache *.js updater/ && node minify-client",
     "start": "node usage-stats update && node usage-stats --clear upgrade 2 && node usage-stats check",
-    "test": "eslint --cache *.js updater/"
+    "test": "eslint --cache *.js updater/",
+    "clone-showdown": "rm -rf pokemon-showdown && git clone https://github.com/smogon/pokemon-showdown && cd pokemon-showdown && npm i && node build"
   },
   "main": "usage-stats.js",
   "bin": "usage-stats.js",
