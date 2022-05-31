@@ -8,7 +8,8 @@ const Http = require('https');
 const Parser = require(Path.resolve(__dirname, "parse-file.js"));
 
 const Smogon_Stats_URL = "https://www.smogon.com/stats/";
-const Months_File = Path.resolve(__dirname, "../data/months-available.json");
+const path = process.env.USAGE_PATH ? [process.env.USAGE_PATH] : [__dirname,"..","data"]
+const Months_File = Path.resolve(...path, "months-available.json");
 
 exports.start = function () {
 	console.log("Getting months data...");
@@ -30,7 +31,8 @@ exports.start = function () {
 
 exports.check = function () {
 	let months = {list: []};
-	let files = FileSystem.readdirSync(Path.resolve(__dirname, "../data/months/"));
+	const path = process.env.USAGE_PATH ? [process.env.USAGE_PATH] : [__dirname,"..","data"]
+	let files = FileSystem.readdirSync(Path.resolve(...path,"months"));
 	for (let file of files) {
 		if ((/[0-9][0-9][0-9][0-9]-[0-9][0-9]/).test(file)) {
 			months.list.push(file);
@@ -41,5 +43,6 @@ exports.check = function () {
 
 exports.checkAndUpdate = function () {
 	let months = exports.check();
-	FileSystem.writeFileSync(Path.resolve(__dirname, "../data/months.json"), JSON.stringify(months));
+	const path = process.env.USAGE_PATH ? [process.env.USAGE_PATH] : [__dirname,"..","data"]
+	FileSystem.writeFileSync(Path.resolve(...path,"months.json"), JSON.stringify(months));
 };
