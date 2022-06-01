@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /* Updater Main file */
 
 'use strict';
