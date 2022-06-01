@@ -4,7 +4,8 @@
 
 const Path = require('path');
 
-const Months_File = Path.resolve(__dirname, "../data/months-available.json");
+const path = process.env.USAGE_PATH ? [process.env.USAGE_PATH] : [__dirname,"..","data"];
+const Months_File = Path.resolve(...path, "months-available.json");
 
 let currMonth = -1;
 let monthsList = [];
@@ -40,8 +41,7 @@ exports.start = function (num, doClear) {
 	}
 
 	const months_all = require(Months_File).months;
-	const path = process.env.USAGE_PATH ? [process.env.USAGE_PATH] : [__dirname,"..","data"];
-	const months = require(Path.resolve(...path, "update-months.js")).check().list;
+	const months = require(Path.resolve(__dirname, "update-months.js")).check().list;
 
 	if (num === "all") num = months_all.length;
 
