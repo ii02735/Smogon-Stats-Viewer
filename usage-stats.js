@@ -3,6 +3,8 @@
 
 'use strict';
 
+require("dotenv").config()
+
 const Path = require('path');
 const FileSystem = require('fs');
 const Program = require('commander');
