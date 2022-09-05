@@ -9,8 +9,7 @@
   "scripts": {
     "build": "eslint --fix --cache *.js updater/ && node minify-client",
     "start": "node usage-stats update && node usage-stats --clear upgrade 2 && node usage-stats check",
-    "test": "eslint --cache *.js updater/",
-    "postinstall": "rm -rf pokemon-showdown && git clone https://github.com/smogon/pokemon-showdown && cd pokemon-showdown && npm i && node build"
+    "test": "eslint --cache *.js updater/"
   },
   "main": "usage-stats.js",
   "bin": "usage-stats.js",
@@ -22,7 +21,6 @@
     "fs-extra": "^10.1.0",
     "mime": "^1.6.0",
     "node-static": "0.7.9",
-    "pokemon-showdown": "^0.11.7",
     "rimraf": "2.6.1"
   },
   "description": "Smogon usage stats viewer",
