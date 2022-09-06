@@ -37,7 +37,7 @@ exports.start = function () {
 	let pokemonShowdownPath = null;
 	if("POKEMON_SHOWDOWN_REPO" in process.env){
 		const fullPath = require('path').dirname(require.main.filename)
-		pokemonShowdownPath = /^node_modules/.exec(fullPath)[1]+process.env.POKEMON_SHOWDOWN_REPO
+		pokemonShowdownPath = /^(.*?)node_modules/.exec(fullPath)[1]+process.env.POKEMON_SHOWDOWN_REPO
 	}else
 		pokemonShowdownPath = "pokemon-showdown"
 	const { Dex } = require(Path.join(pokemonShowdownPath,'.sim-dist','dex.js'));
