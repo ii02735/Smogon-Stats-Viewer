@@ -40,6 +40,6 @@ exports.start = function () {
 		pokemonShowdownPath = /^(.*?)node_modules/.exec(fullPath)[1]+process.env.POKEMON_SHOWDOWN_REPO
 	}else
 		pokemonShowdownPath = "pokemon-showdown"
-	const { Dex } = require(Path.join(pokemonShowdownPath,'.sim-dist','dex.js'));
+	const { Dex } = require(Path.join(pokemonShowdownPath,'sim','dex.js'));
 	updateNames(Dex.formats.all());
 };
